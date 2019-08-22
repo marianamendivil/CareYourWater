@@ -24,3 +24,33 @@ section {
     bottom: 0;
     background-color: blue;
 }
+
+#formP h1{
+    background-color: blue;
+    color: white;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+#formP form select {
+    background-color: aqua;
+    border-width: 0;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    text-align-last: center;
+}
+
+.form {
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#formButton {
+    color: blue;
+    margin: 30%;
+}
