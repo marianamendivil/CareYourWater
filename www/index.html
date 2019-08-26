@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -27,26 +26,26 @@
             <h1>Cuéntanos sobre ti</h1>
             <p>Es importante que nos brindes esta información para darte un análisis preciso y detallado sobre tu consumo de agua.</p>
             <form action="">
-                <select name="commune" id="commune">
+                <select name="commune" id="commune" required>
                     <option value="">Comuna</option>
-                    <option value="commune1">1</option>
-                    <option value="commune2">2</option>
-                    <option value="commune3">3</option>
-                    <option value="commune4">4</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                 </select>
-                <select name="neighborhood" id="neighborhood">
+                <select name="neighborhood" id="neighborhood" required>
                     <option value="">Barrio</option>
-                    <option value="nh1">1</option>
-                    <option value="nh2">2</option>
-                    <option value="nh3">3</option>
-                    <option value="nh4">4</option>
+                    <option value="laureles">laureles</option>
+                    <option value="castilla">castilla</option>
+                    <option value="robledo">robledo</option>
+                    <option value="poblado">poblado</option>
                 </select>
-                <select name="stratum" id="stratum">
+                <select name="stratum" id="stratum" required>
                     <option value="">Estrato</option>
-                    <option value="stratum1">1</option>
-                    <option value="stratum2">2</option>
-                    <option value="stratum3">3</option>
-                    <option value="stratum4">4</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                 </select>
                 <div id="formButton">&#8594;</div>
             </form>
@@ -57,7 +56,34 @@
         <section class="hidri hiding" id="hidriP">Halo, you're in hidri</section>
         <!-- Section for the profile page -->
         <section class="profile hiding" id="profileP">Halo, you're in profile</section>
+        
+        <!-- Firebase Configuration -->
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+        
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+        
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-firestore.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCXw1Ii_WasgdEb79xofmSB4coQUsTMKzs",
+            authDomain: "careyourwater.firebaseapp.com",
+            databaseURL: "https://careyourwater.firebaseio.com",
+            projectId: "careyourwater",
+            storageBucket: "careyourwater.appspot.com",
+            messagingSenderId: "622924979139",
+            appId: "1:622924979139:web:edd0f38860854019"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        </script>
 
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/form.js"></script>
     </body>
 </html>

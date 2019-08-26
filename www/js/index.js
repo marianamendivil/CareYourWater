@@ -25,6 +25,11 @@ function init(){
     profileButton.addEventListener('click', hiding("profileP"));
 }
 
+var form = document.getElementById("formButton");
+    form.addEventListener('click', function(){
+        form();
+    });
+
 //This function shows the page that you select in the nav bar, and hides the other pages
 
 function hiding (id){
