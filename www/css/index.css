@@ -23,9 +23,25 @@ section {
     position: absolute;
     bottom: 0;
     background-color: blue;
+    margin-bottom: 0; 
 }
 
-#formP h1{
+.hidriNav {
+    background-image: url("../img/hidri.png");
+    background-repeat: no-repeat;
+}
+
+.mainNav {
+    background-image: url("../img/graph.png");
+    background-repeat: no-repeat;
+}
+
+.profileNav {
+    background-image: url("../img/profile.png");
+    background-repeat: no-repeat;
+}
+
+#formP h1 {
     background-color: blue;
     color: white;
     width: 100%;
