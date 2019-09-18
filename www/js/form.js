@@ -1,19 +1,14 @@
 function form(){
-
-    console.log("EEEEEEEEEEEEEEEEEEEEEEE");
-    console.log(firebase.auth().currentUser.uid);
     
     var neighborhood = document.getElementById("neighborhood").value;
     var stratum = document.getElementById("stratum").value;
     //var validate = validateNulls(commune,neighborhood,stratum);
 
     var db = firebase.firestore();
-    console.log(db);
-    console.log(db.collection("form"));
     db.collection("form").add({
-        barrio: "holiwis",
-        estrato: "stratum"
-        //id: firebase.auth().currentUser.uid
+        barrio: neighborhood,
+        estrato: stratum,
+        id: firebase.auth().currentUser.uid
     })
     .then(function() {
         console.log("Document successfully written!");

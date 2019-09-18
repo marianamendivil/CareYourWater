@@ -12,22 +12,8 @@ function init(){
 
             var formButton = document.getElementById("formButton");
             formButton.addEventListener('click', ()=>{
-                console.log("clickkk");
-                var db = firebase.firestore();
-                db.collection("form").add({
-                    barrio: "holiwis",
-                    estrato: "stratum"
-                    //id: firebase.auth().currentUser.uid
-                })
-                .then(function() {
-                    console.log("Document successfully written!");
-                })
-                .catch(function(error) {
-                    console.error("Error writing document: ", error);
-                });
-                console.log("arrived here"); 
+                form();
                 navigate("formP", "mainP")();
-                console.log("AAAAAAAAAAAAAAAAAAA");
                 document.getElementById("navBar").style.display = "block";
             });
             
@@ -78,6 +64,5 @@ var navigate = function(actual, next){
     return function(){
         hide(actual);
         show(next);
-        console.log("te amo morita");
     }
 }
