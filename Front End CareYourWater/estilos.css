@@ -1,0 +1,168 @@
+div{
+margin: 5px 5px 5px 5px;
+text-align: center;
+}
+
+br{
+color: white;
+font-family: "Gill Sans MT Condensed";
+font-size: 20px;
+align-items: center;
+}
+
+h1{
+color: #1a1a1a;
+font-family: "Gill Sans MT Condensed";
+font-size: 30px;
+font-weight: lighter;
+text-align: center;
+}
+
+h2{
+color: #dbdbdb;
+background-color: #0050c8;
+padding: 20px;
+font-family: "Gill Sans MT Condensed";
+font-size: 30px;
+font-weight: lighter;
+text-align: justify-all;
+}
+
+h3{
+color: #1a1a1a;
+font-family: "Gill Sans MT Condensed";
+font-size: 30px;
+font-weight: lighter;
+text-align: center;
+}
+
+h4{
+	color: #1a1a1a;
+	font-family: "Gill Sans MT Condensed";
+	font-size: 12px;
+	font-weight: lighter;
+	text-align: center;
+}
+
+h5{
+color: #0050c8;
+font-family: "Gill Sans MT Condensed";
+font-size: 30px;
+text-align: center;
+line-height: 5%;
+}
+
+h6{
+color: #1a1a1a;
+font-family: "Gill Sans MT Condensed";
+font-size: 28px;
+font-weight: lighter;
+text-align: left;
+line-height: 0.5%;
+}
+
+p{
+color: #0050c8;
+font-family: "Gill Sans MT Condensed";
+font-size: 18px;
+font-weight: lighter;
+text-align: center;
+}
+
+article{
+	opacity: 0.8;
+	position: absolute;
+}
+
+li{
+	background-color: #29abe2;
+	color: #1a1a1a;
+	font-family: "Gill Sans MT Condensed";
+	font-size: 30px;
+	font-weight: lighter;
+	text-align: center;
+	opacity: 0.8;
+}
+
+span{
+	opacity: 0.5;
+}
+
+#menuDesplegable{
+	display: inline-block;
+    margin-right: 25px;
+    width: 200px;
+    position: relative;
+    display: inline-block;
+}
+
+#footer{
+	background-color: #1a1a1a;
+}
+
+ul{
+	color: #1a1a1a;
+	font-family: "Gill Sans MT Condensed";
+	display: block;
+    position: relative;
+    font-size: 25px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+#botonGoogle{
+background-color: #db4a39;
+color: #dbdbdb;
+font-family: "Gill Sans MT Condensed";
+font-size: 18px;
+font-weight: lighter;
+align-items: center;
+width: 210px;
+height: 50px;
+}
+
+#botonNormal{
+background-color: #0050c8;
+color: #dbdbdb;
+font-family: "Gill Sans MT Condensed";
+align-items: center;
+font-size: 22px;
+width: 200px;
+height: 50px;
+margin: 10px 10px 10px 10px;
+}
+
+.icon{
+width: 40px;
+}
+
+#botonAdelante{
+width: 30px;
+height: 30px;
+background-image:url(img/btn_Adelante.png);
+}
+
+@media only screen and (max-width:800px) {
+/* For tablets: */
+.main {
+width: 80%;
+padding: 0;
+}
+.right {
+width: 100%;
+}
+}
+@media only screen and (max-width:500px) {
+/* For mobile phones: */
+.menu, .main, .right {
+width: 100%;
+}
+}
+
+#columnaFoto{
+	width: 10%;
+}
+
+#columnaInfo{
+	width: 90%
+}
