@@ -1,29 +1,5 @@
 window.onload = init;
 
-function form(){
-    var commune = document.getElementById("commune").value;
-    var neighborhood = document.getElementById("neighborhood").value;
-    var stratum = document.getElementById("stratum").value;
-    var user = firebase.auth().currentUser.uid;
-    //var validate = validateNulls(commune,neighborhood,stratum);
-
-    console.log("firebase here");
-    var db = firebase.firestore();
-    db.collection("form").add({
-        comuna: commune,
-        barrio: neighborhood,
-        estrato: stratum,
-        id: user
-    })
-    .then(function() {
-        console.log("Document successfully written!");
-    })
-    .catch(function(error) {
-        console.error("Error writing document: ", error);
-    });
-    navigate("formP","mainP")();
-}
-
 function init(){
 
     //Authentication with google
@@ -31,20 +7,31 @@ function init(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
-            document.getElementById("formP").style.display = "block";
-            console.log("You're in");
-            
-            //Navigtion
 
-            var signButton = document.getElementById("signButton");
-            signButton.addEventListener('click', navigate("loginP","formP"));
+            document.getElementById("formP").style.display = "block"; 
 
             var formButton = document.getElementById("formButton");
             formButton.addEventListener('click', ()=>{
-                form();
-                console.log("arrived here");
-                document.getElementById("navBar").style.display = "block";   
+                console.log("clickkk");
+                var db = firebase.firestore();
+                db.collection("form").add({
+                    barrio: "holiwis",
+                    estrato: "stratum"
+                    //id: firebase.auth().currentUser.uid
+                })
+                .then(function() {
+                    console.log("Document successfully written!");
+                })
+                .catch(function(error) {
+                    console.error("Error writing document: ", error);
+                });
+                console.log("arrived here"); 
+                navigate("formP", "mainP")();
+                console.log("AAAAAAAAAAAAAAAAAAA");
+                document.getElementById("navBar").style.display = "block";
             });
+            
+            //Navigtion
 
             var hidriButton = document.getElementById("hidriButton");
             hidriButton.addEventListener('click', hiding("hidriP"));
@@ -56,17 +43,16 @@ function init(){
             profileButton.addEventListener('click', hiding("profileP"));
 
         } else {
-          // No user is signed in.
-          document.getElementById("loginP").style.display = "block";
+            // No user is signed in.
+            document.getElementById("loginP").style.display = "block";
             console.log("Not logged in");
+            var signButton = document.getElementById("signButton");
+            signButton.addEventListener('click', ()=>{
+                auth();
+            });
         }
       });
 }
-
-var auth = document.getElementById("signButton");
-auth.addEventListener('click', function(){
-    auth();
-});
 
 //This function shows the page that you select in the nav bar, and hides the other pages
 
@@ -92,5 +78,6 @@ var navigate = function(actual, next){
     return function(){
         hide(actual);
         show(next);
+        console.log("te amo morita");
     }
 }
