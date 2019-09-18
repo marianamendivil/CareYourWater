@@ -26,7 +26,11 @@ function init(){
             mainButton.addEventListener('click', hiding("mainP"));
 
             var profileButton = document.getElementById("profileButton");
-            profileButton.addEventListener('click', hiding("profileP"));
+            profileButton.addEventListener('click', ()=>{
+                hiding("profileP")();
+                console.log(firebase.auth().currentUser.displayName);
+                console.log(firebase.auth().currentUser.email);
+            });
 
         } else {
             // No user is signed in.
