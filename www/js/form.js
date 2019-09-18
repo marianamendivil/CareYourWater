@@ -5,7 +5,7 @@ function form(){
     //var validate = validateNulls(commune,neighborhood,stratum);
 
     var db = firebase.firestore();
-    db.collection("form").add({
+    db.collection("form").doc(firebase.auth().currentUser.uid).set({
         barrio: neighborhood,
         estrato: stratum,
         id: firebase.auth().currentUser.uid
