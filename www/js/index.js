@@ -1,37 +1,44 @@
 window.onload = init;
 
 function init(){
-
     //Authentication with google
-
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
+            firebase.firestore().collection("form").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
+                //Checking if the uid exist in the collection form of the db
+                if (doc.exists) {
+                    document.getElementById("mainP").style.display = "block";
+                    document.getElementById("navBar").style.display = "block";
+                } else {
+                    // doc.data() will be undefined in this case
+                    console.log("No such document!");
+                    document.getElementById("formP").style.display = "block"; 
 
-            document.getElementById("formP").style.display = "block"; 
+                    var formButton = document.getElementById("formButton");
+                    formButton.addEventListener('click', ()=>{
+                        form();
+                        navigate("formP", "mainP")();
+                        document.getElementById("navBar").style.display = "block";
+                    });
+                }
 
-            var formButton = document.getElementById("formButton");
-            formButton.addEventListener('click', ()=>{
-                form();
-                navigate("formP", "mainP")();
-                document.getElementById("navBar").style.display = "block";
+                //NavBar
+                var hidriButton = document.getElementById("hidriButton");
+                hidriButton.addEventListener('click', hiding("hidriP"));
+
+                var mainButton = document.getElementById("mainButton");
+                mainButton.addEventListener('click', hiding("mainP"));
+
+                var profileButton = document.getElementById("profileButton");
+                profileButton.addEventListener('click', ()=>{
+                    hiding("profileP")();
+                    console.log(firebase.auth().currentUser.displayName);
+                    console.log(firebase.auth().currentUser.email);
+                });
+            }).catch(function(error) {
+                console.log("Error getting document:", error);
             });
-            
-            //Navigtion
-
-            var hidriButton = document.getElementById("hidriButton");
-            hidriButton.addEventListener('click', hiding("hidriP"));
-
-            var mainButton = document.getElementById("mainButton");
-            mainButton.addEventListener('click', hiding("mainP"));
-
-            var profileButton = document.getElementById("profileButton");
-            profileButton.addEventListener('click', ()=>{
-                hiding("profileP")();
-                console.log(firebase.auth().currentUser.displayName);
-                console.log(firebase.auth().currentUser.email);
-            });
-
         } else {
             // No user is signed in.
             document.getElementById("loginP").style.display = "block";
@@ -45,7 +52,6 @@ function init(){
 }
 
 //This function shows the page that you select in the nav bar, and hides the other pages
-
 function hiding (id){
     return function(){
         var elements = document.getElementsByClassName("hiding");
