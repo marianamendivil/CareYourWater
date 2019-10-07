@@ -2,29 +2,15 @@ function form(){
     
     var neighborhood = document.getElementById("neighborhood").value;
     var stratum = document.getElementById("stratum").value;
-    //var validate = validateNulls(commune,neighborhood,stratum);
+    var validate = validateNulls(neighborhood,stratum);
 
-    var db = firebase.firestore();
-    db.collection("form").doc(firebase.auth().currentUser.uid).set({
-        barrio: neighborhood,
-        estrato: stratum,
-        id: firebase.auth().currentUser.uid
-    })
-    .then(function() {
-        console.log("Document successfully written!");
-    })
-    .catch(function(error) {
-        console.error("Error writing document: ", error);
-    });
-
-    /*
     if(validate == true){
-        console.log("algo");
+        console.log("validation complete");
         var db = firebase.firestore();
-        db.collection("form").add({
-            comuna: commune,
+        db.collection("form").doc(firebase.auth().currentUser.uid).set({
             barrio: neighborhood,
-            estrato: stratum
+            estrato: stratum,
+            id: firebase.auth().currentUser.uid
         })
         .then(function() {
             console.log("Document successfully written!");
@@ -32,27 +18,28 @@ function form(){
         .catch(function(error) {
             console.error("Error writing document: ", error);
         });
-    }*/
-}
-/*
-function validateNulls(commune,neighborhood,stratum){
-    var validate = true;
-    console.log("it validates");
-    if(commune==""){
-        document.getElementById("commune").classList.add("alert-danger");
-        validate = false;
-        console.log("commune validate");
-    }
-    if(neighborhood==""){
-        document.getElementById("neighborhood").classList.add("alert-danger");
-        validate = false;
-        console.log("neigh validate");
-    }
-    if(stratum==""){
-        document.getElementById("stratum").classList.add("alert-danger");
-        validate = false;
-        console.log("stratum validate");
     }
     return validate;
 }
-*/
+
+function validateNulls(neighborhood,stratum){
+    var validate = true;
+    console.log("it validates");
+    if(neighborhood==""){
+        document.getElementById("neighborhood").style.border = "red solid 5px";
+        validate = false;
+        console.log("neighborhood validate");
+    }
+    else{
+        document.getElementById("neighborhood").style.border = "0";
+    }
+    if(stratum==""){
+        document.getElementById("stratum").style.border = "red solid 5px";
+        validate = false;
+        console.log("stratum validate");
+    }
+    else{
+        document.getElementById("stratum").style.border = "0";
+    }
+    return validate;
+}

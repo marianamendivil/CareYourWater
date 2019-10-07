@@ -17,9 +17,11 @@ function init(){
 
                     var formButton = document.getElementById("formButton");
                     formButton.addEventListener('click', ()=>{
-                        form();
-                        navigate("formP", "mainP")();
-                        document.getElementById("navBar").style.display = "block";
+                        validate = form();
+                        if(validate){
+                            navigate("formP", "mainP")();
+                            document.getElementById("navBar").style.display = "block";
+                        }
                     });
                 }
 
