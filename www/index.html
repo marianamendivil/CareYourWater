@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="font/style.css"/>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Care Your Water</title>
     </head>
@@ -12,43 +13,36 @@
         <!-- Navigation -->
 
         <!-- Section for the navigation bar -->
-        <section id="navBar">
-            <div id="hidriButton">Hidri</div>
-            <div id="mainButton">Graph</div>
-            <div id="profileButton">Profile</div>
+        <section id="navBar" class="navbar">
+            <div id="hidriButton" class="hidriNav">Hidri</div>
+            <div id="mainButton" class="mainNav">Graph</div>
+            <div id="profileButton" class="profileNav">Profile</div>
         </section>
         
         <!-- Section for the login page -->
         <section class="login" id="loginP">
-            <div id="signButton">Sign in with google</div>
+            <div id="signButton">Ingresa con tu cuenta de google</div>
         </section>
         <!-- Section for the form page -->
         <section class="form" id="formP">
-            <h1>Cuéntanos sobre ti</h1>
+            <div id="header"><h1>Cuéntanos sobre ti</h1></div>
             <p>Es importante que nos brindes esta información para darte un análisis preciso y detallado sobre tu consumo de agua.</p>
             <form action="">
-                <select name="commune" id="commune">
-                    <option value="">Comuna</option>
-                    <option value="commune1">1</option>
-                    <option value="commune2">2</option>
-                    <option value="commune3">3</option>
-                    <option value="commune4">4</option>
-                </select>
-                <select name="neighborhood" id="neighborhood">
+                <select name="neighborhood" id="neighborhood" required>
                     <option value="">Barrio</option>
-                    <option value="nh1">1</option>
-                    <option value="nh2">2</option>
-                    <option value="nh3">3</option>
-                    <option value="nh4">4</option>
+                    <option value="laureles">laureles</option>
+                    <option value="castilla">castilla</option>
+                    <option value="robledo">robledo</option>
+                    <option value="poblado">poblado</option>
                 </select>
-                <select name="stratum" id="stratum">
+                <select name="stratum" id="stratum" required>
                     <option value="">Estrato</option>
-                    <option value="stratum1">1</option>
-                    <option value="stratum2">2</option>
-                    <option value="stratum3">3</option>
-                    <option value="stratum4">4</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                 </select>
-                <div id="formButton">&#8594;</div>
+                <div id="formButton"></div>
             </form>
         </section>
         <!-- Section for the graphics (main) page -->
@@ -57,7 +51,57 @@
         <section class="hidri hiding" id="hidriP">Halo, you're in hidri</section>
         <!-- Section for the profile page -->
         <section class="profile hiding" id="profileP">Halo, you're in profile</section>
+        
+        <!-- Firebase Configuration -->
 
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+        
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+        
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-firestore.js"></script>
+        <!--<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>-->
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCXw1Ii_WasgdEb79xofmSB4coQUsTMKzs",
+            authDomain: "careyourwater.firebaseapp.com",
+            databaseURL: "https://careyourwater.firebaseio.com",
+            projectId: "careyourwater",
+            storageBucket: "careyourwater.appspot.com",
+            messagingSenderId: "622924979139",
+            appId: "1:622924979139:web:edd0f38860854019"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        /*var db = firebase.firestore();
+
+        db.collection("cities").doc("asdasLA").set({
+            name: "Los Angeles",
+            state: "CasdasA",
+            stasdaate: "CasdasdasA",
+            stasaasddaate: "CAasd",
+            country: "USA"
+        })
+        .then(function() {
+            console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });*/
+        </script>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/authGoogle.js"></script>
+        <script type="text/javascript" src="js/form.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
