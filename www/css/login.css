@@ -21,10 +21,11 @@
 }
 
 #signButton{
-    background-image: url("../img/google.png");
+    background-image: url("../img/btn_Google.png");
     background-repeat: no-repeat;
     background-size: contain;
     height: 10vh;
     width: 72vw;
     margin-top: 50px;
+    margin-left: 25px;
 }
