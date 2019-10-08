@@ -1,0 +1,30 @@
+#logo{
+    background-image: url("../img/Logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 40vh;
+    width: 80vw;
+    
+}
+
+#loginP {
+    padding-top: 100px;
+    padding-left: 50px;
+    background-image: linear-gradient(to bottom, #0050c8, #29ABE2);
+}
+
+#welcome{
+    font-family: "Gill Sans MT";
+    font-size: x-large;
+    margin-right: 55px;
+    color: #DBDBDB;
+}
+
+#signButton{
+    background-image: url("../img/google.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 10vh;
+    width: 72vw;
+    margin-top: 50px;
+}
