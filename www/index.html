@@ -50,7 +50,28 @@
         <!-- Section for the virtual pet (hidri) page -->
         <section class="hidri hiding" id="hidriP">Halo, you're in hidri</section>
         <!-- Section for the profile page -->
-        <section class="profile hiding" id="profileP">Halo, you're in profile</section>
+        <section class="profile hiding" id="profileP">Halo, you're in profile
+            <div>Nombre:</div><div id="userName"></div>
+            <div>Correo:</div><div id="userEmail"></div>
+            <div>Barrio:</div><select name="userNeighborhood" id="userNeighborhood" disabled>
+                <option id="userNe" value="" disabled></option>
+                <option value="laureles">laureles</option>
+                <option value="castilla">castilla</option>
+                <option value="robledo">robledo</option>
+                <option value="poblado">poblado</option>
+            </select>
+            <div>Estrato:</div><select name="userStratum" id="userStratum" disabled>
+                <option id="userSt" value="" disabled></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <br>
+            <br>
+            <button id="editProfile">Editar perfil</button>
+            <button id="saveChanges" style="display:none">Guardar cambios</button>
+        </section>
         
         <!-- Firebase Configuration -->
 
@@ -102,6 +123,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/authGoogle.js"></script>
         <script type="text/javascript" src="js/form.js"></script>
+        <script type="text/javascript" src="js/profile.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
