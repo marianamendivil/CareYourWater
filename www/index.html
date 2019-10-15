@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/login.css">
         <link rel="stylesheet" type="text/css" href="css/form.css">
+        <link rel="stylesheet" type="text/css" href="css/graph.css">
 
         <title>Care Your Water</title>
     </head>
@@ -56,7 +57,19 @@
         </section>
         
         <!-- Section for the graphics (main) page -->
-        <section class="main hiding" id="mainP">Halo, you're in main/graph</section>
+        <section class="main hiding" id="mainP">Halo, you're in main/graph
+            <div>
+                <div id="reset"><svg></svg></div>
+                <select name="prueba" id="prueba">
+                    <option value="">Consumo</option>
+                    <option value="100">100</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="200">200</option>
+                </select>
+                <button id="sendPrueba">Enviar</button>
+            </div> 
+        </section>
         <!-- Section for the virtual pet (hidri) page -->
         <section class="hidri hiding" id="hidriP">Halo, you're in hidri</section>
         <!-- Section for the profile page -->
@@ -131,8 +144,10 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
         <script type="text/javascript" src="js/authGoogle.js"></script>
         <script type="text/javascript" src="js/form.js"></script>
+        <script type="text/javascript" src="js/graph.js"></script>
         <script type="text/javascript" src="js/profile.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>

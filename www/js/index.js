@@ -23,7 +23,6 @@ function init(){
                             navigate("formP", "mainP")();
                             document.getElementById("navBar").style.display = "block";
                             document.getElementById("logoMini").style.display = "block";
-
                         }
                     });
                 }
@@ -33,7 +32,11 @@ function init(){
                 hidriButton.addEventListener('click', hiding("hidriP"));
 
                 var mainButton = document.getElementById("mainButton");
-                mainButton.addEventListener('click', hiding("mainP"));
+                mainButton.addEventListener('click', ()=>{
+                    d3.select("#reset").select("svg").remove();
+                    graph();
+                    hiding("mainP")();
+                });
 
                 var profileButton = document.getElementById("profileButton");
                 profileButton.addEventListener('click', ()=>{
