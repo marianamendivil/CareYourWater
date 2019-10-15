@@ -10,6 +10,7 @@ function init(){
                 if (doc.exists) {
                     document.getElementById("mainP").style.display = "block";
                     document.getElementById("navBar").style.display = "block";
+                    document.getElementById("logoMini").style.display = "block";
                 } else {
                     // doc.data() will be undefined in this case
                     console.log("No such document!");
@@ -21,6 +22,8 @@ function init(){
                         if(validate){
                             navigate("formP", "mainP")();
                             document.getElementById("navBar").style.display = "block";
+                            document.getElementById("logoMini").style.display = "block";
+
                         }
                     });
                 }

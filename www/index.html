@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="font/style.css"/>
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <link rel="stylesheet" type="text/css" href="css/form.css">
+
         <title>Care Your Water</title>
     </head>
     <body>
@@ -18,10 +21,16 @@
             <div id="mainButton" class="mainNav">Graph</div>
             <div id="profileButton" class="profileNav">Profile</div>
         </section>
+
+        <section id="logoMini" class="logoMini">
+                <div id="logofixed" class="logofixed"></div>
+        </section>
         
         <!-- Section for the login page -->
         <section class="login" id="loginP">
-            <div id="signButton">Ingresa con tu cuenta de google</div>
+            <div id="logo"></div>
+            <p id="welcome">¡Bienvenido!</p>
+            <div id="signButton"></div>
         </section>
         <!-- Section for the form page -->
         <section class="form" id="formP">
@@ -30,10 +39,10 @@
             <form action="">
                 <select name="neighborhood" id="neighborhood" required>
                     <option value="">Barrio</option>
-                    <option value="laureles">laureles</option>
-                    <option value="castilla">castilla</option>
-                    <option value="robledo">robledo</option>
-                    <option value="poblado">poblado</option>
+                    <option value="laureles">Laureles</option>
+                    <option value="castilla">Castilla</option>
+                    <option value="robledo">Robledo</option>
+                    <option value="poblado">Poblado</option>
                 </select>
                 <select name="stratum" id="stratum" required>
                     <option value="">Estrato</option>
@@ -45,6 +54,7 @@
                 <div id="formButton"></div>
             </form>
         </section>
+        
         <!-- Section for the graphics (main) page -->
         <section class="main hiding" id="mainP">Halo, you're in main/graph</section>
         <!-- Section for the virtual pet (hidri) page -->
