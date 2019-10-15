@@ -35,8 +35,11 @@ function init(){
                 var profileButton = document.getElementById("profileButton");
                 profileButton.addEventListener('click', ()=>{
                     hiding("profileP")();
-                    console.log(firebase.auth().currentUser.displayName);
-                    console.log(firebase.auth().currentUser.email);
+                    profile();
+                    document.getElementById("userName").textContent = "";
+                    document.getElementById("userEmail").textContent = "";
+                    document.getElementById("userNe").textContent = "";
+                    document.getElementById("userSt").textContent = "";
                 });
             }).catch(function(error) {
                 console.log("Error getting document:", error);
