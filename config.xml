@@ -19,6 +19,14 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
+    <universal-links>
+    <host name="careyourwater.page.link" scheme="https" />
+    <host name="careyourwater.firebaseapp.com" scheme="https">
+        <path url="/__/auth/callback"/>
+    </host>
+    </universal-links>
+    <preference name="OverrideUserAgent" value="Mozilla/5.0 Google" />
+    <allow-navigation href="*" />
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
