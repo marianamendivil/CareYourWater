@@ -32,27 +32,44 @@ section {
     background-position: top;
 }
 
-#navBar {
-    height: auto;
+.navButtons {
+    position:absolute;
+    bottom:0;
+    height: 6.4vh;
+    width: 33.4vw;
+    text-align: center;
+}
+
+#navBar{
     position: absolute;
+    margin-bottom: 0px;
+    height: 6.4vh;
     bottom: 0;
-    background-color: black;
-    margin-bottom: 0; 
+    box-shadow: 0 -2px 4px -2px #999;
 }
 
-.hidriNav {
-    background-image: url("../img/iconos/btn_Hidri.png");
+#hidriButton {
+    background-image: url('../img/iconos/btn_Hidri.png');
     background-repeat: no-repeat;
+    background-size: 3.5vh;
+    background-position: center;
+    margin-left: 0vw;
 }
 
-.mainNav {
-    background-image: url("../img/iconos/btn_Stats.png");
+#mainButton {
+    background-image: url('../img/iconos/btn_Stats.png');
     background-repeat: no-repeat;
+    background-size: 3.5vh;
+    background-position: center;
+    margin-left: 33.4vw;
 }
 
-.profileNav {
-    background-image: url("../img/iconos/btn_Profile.png");
+#profileButton {
+    background-image: url('../img/iconos/btn_Profile.png');
     background-repeat: no-repeat;
+    background-size: 3.5vh;
+    background-position: center;
+    margin-left: 66.8vw;
 }
 
 #header {
