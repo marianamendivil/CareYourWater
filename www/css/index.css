@@ -84,3 +84,14 @@ section {
     align-items: center;
     justify-content: center;
 }
+
+#hidriDiv{
+    position: absolute;
+    margin-top: 20vh;
+    text-align: center;
+}
+
+#hidriImg{
+    width: 100vw;
+    height: 50vh;
+}
