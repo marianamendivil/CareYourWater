@@ -4,12 +4,20 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="font/style.css"/>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/login.css">
         <link rel="stylesheet" type="text/css" href="css/form.css">
         <link rel="stylesheet" type="text/css" href="css/graph.css">
+        <link rel="shortcut icon" href="VirtualPetWeb/TemplateData/favicon.ico">
+        <link rel="stylesheet" href="VirtualPetWeb/TemplateData/style.css">
+        <script src="VirtualPetWeb/TemplateData/UnityProgress.js"></script>
+        <script src="VirtualPetWeb/Build/UnityLoader.js"></script>
+        <script>
+            var unityInstance = UnityLoader.instantiate("unityContainer", "VirtualPetWeb/Build/VirtualPetWeb.json", {onProgress: UnityProgress});
+        </script>
 
         <title>Care Your Water</title>
     </head>
@@ -18,9 +26,9 @@
 
         <!-- Section for the navigation bar -->
         <section id="navBar" class="navbar">
-            <div id="hidriButton" class="hidriNav">Hidri</div>
-            <div id="mainButton" class="mainNav">Graph</div>
-            <div id="profileButton" class="profileNav">Profile</div>
+            <div id="hidriButton" class="navButtons"></div>
+            <div id="mainButton" class="navButtons"></div>
+            <div id="profileButton" class="navButtons"></div>
         </section>
 
         <section id="logoMini" class="logoMini">
@@ -62,38 +70,56 @@
                 <div id="reset"><svg></svg></div>
                 <select name="prueba" id="prueba">
                     <option value="">Consumo</option>
-                    <option value="100">100 m3</option>
-                    <option value="20">20 m3</option>
-                    <option value="30">30 m3</option>
-                    <option value="200">200 m3</option>
+                    <option value="22242">22.242 m3</option>
+                    <option value="36788">36.788 m3</option>
+                    <option value="90195">90.195 m3</option>
+                    <option value="18225">18.225 m3</option>
                 </select>
                 <button id="sendPrueba">Enviar</button>
             </div> 
         </section>
+
         <!-- Section for the virtual pet (hidri) page -->
-        <section class="hidri hiding" id="hidriP"></section>
+        <section class="hidri hiding" id="hidriP">
+            <div class="webgl-content" style="
+            width: 56vw;
+            height: 50vh;
+            top: 120px;
+            left: 100px;">
+            <div id="unityContainer" style="width: 100vw;height: 100vh;padding: 0px;margin: 0px;border: 0px;position: relative;background: rgb(35, 31, 32);"></div>
+                <!--<div class="footer">
+                    <div class="webgl-logo"></div>
+                    <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+                    <div class="title">Care Your Water</div>
+                </div>-->
+            </div>
+        </section>
+
         <!-- Section for the profile page -->
         <section class="profile hiding" id="profileP">
-            <div style="padding-top: 50px;">Nombre:</div><div id="userName"></div>
-            <div>Correo:</div><div id="userEmail"></div>
-            <div>Barrio:</div><select name="userNeighborhood" id="userNeighborhood" disabled>
+            <div id="profile_picture"></div>
+            <div class="profile_label" style="padding-top: 30vh;">Nombre:</div><div class="profile_text" id="userName"></div>
+            <div class="profile_label">Correo:</div><div class="profile_text" id="userEmail"></div>
+            <div class="profile_label">Barrio:</div><select class="profile_text" name="userNeighborhood" id="userNeighborhood" disabled>
                 <option id="userNe" value="" disabled selected></option>
                 <option value="laureles">laureles</option>
                 <option value="castilla">castilla</option>
                 <option value="robledo">robledo</option>
                 <option value="poblado">poblado</option>
             </select>
-            <div>Estrato:</div><select name="userStratum" id="userStratum" disabled>
+            <div class="profile_label">Estrato:</div><select class="profile_text" name="userStratum" id="userStratum" disabled>
                 <option id="userSt" value="" disabled selected></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
             </select>
             <br>
             <br>
-            <button id="editProfile">Editar perfil</button>
-            <button id="saveChanges" style="display:none">Guardar cambios</button>
+            <div id="editProfile"></div>
+            <div id="saveChanges" style="display:none"></div>
         </section>
         
         <!-- Firebase Configuration -->

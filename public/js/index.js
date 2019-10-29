@@ -34,7 +34,7 @@ function init(){
                 var mainButton = document.getElementById("mainButton");
                 mainButton.addEventListener('click', ()=>{
                     d3.select("#reset").select("svg").remove();
-                    graph();
+                    main();
                     hiding("mainP")();
                 });
 

@@ -1,8 +1,9 @@
-body {
+body, html {
     margin: 0;
     padding: 0;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
 
 section {
@@ -25,34 +26,52 @@ section {
 #logofixed{
     background-image: url("../img/logomini.png");
     background-repeat: no-repeat;
+    background-color: aliceblue;
     position: absolute;
-    width: 100%;
-    height: 8%;
+    width: 100vw;
+    height: 11vw;
     background-size: 50%;
     background-position: top;
 }
 
-#navBar {
-    height: auto;
+.navButtons {
+    position:absolute;
+    bottom:0;
+    height: 6.4vh;
+    width: 33.4vw;
+    text-align: center;
+}
+
+#navBar{
     position: absolute;
+    margin-bottom: 0px;
+    height: 6.4vh;
     bottom: 0;
-    background-color: black;
-    margin-bottom: 0; 
+    box-shadow: 0 -2px 4px -2px #999;
 }
 
-.hidriNav {
-    background-image: url("../img/iconos/btn_Hidri.png");
+#hidriButton {
+    background-image: url('../img/iconos/btn_Hidri.png');
     background-repeat: no-repeat;
+    background-size: 3.5vh;
+    background-position: center;
+    margin-left: 0vw;
 }
 
-.mainNav {
-    background-image: url("../img/iconos/btn_Stats.png");
+#mainButton {
+    background-image: url('../img/iconos/btn_Stats.png');
     background-repeat: no-repeat;
+    background-size: 3.5vh;
+    background-position: center;
+    margin-left: 33.4vw;
 }
 
-.profileNav {
-    background-image: url("../img/iconos/btn_Profile.png");
+#profileButton {
+    background-image: url('../img/iconos/btn_Profile.png');
     background-repeat: no-repeat;
+    background-size: 3.5vh;
+    background-position: center;
+    margin-left: 66.8vw;
 }
 
 #header {
@@ -66,4 +85,62 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#hidriDiv{
+    position: absolute;
+    margin-top: 20vh;
+    text-align: center;
+}
+
+#hidriImg{
+    width: 100vw;
+    height: 50vh;
+}
+
+.profile_label{
+    font-family: 'Bree Serif', serif;
+    font-size: 20px;
+}
+
+.profile_text{
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    font-size: 18px;
+}
+
+#editProfile{
+    position: absolute;
+    margin-bottom: 10vh;
+    margin-left: 43vw;
+    height: 14vw;
+    width: 14vw;
+    background-image: url('../img/iconos/edit.png');
+    background-repeat: no-repeat;
+    background-size: 12vw;
+    background-position: center;
+}
+
+#saveChanges{
+    position: absolute;
+    margin-bottom: 10vh;
+    margin-left: 43vw;
+    height: 14vw;
+    width: 14vw;
+    background-image: url('../img/iconos/done_green.png');
+    background-repeat: no-repeat;
+    background-size: 12vw;
+    background-position: center;
+}
+
+#profile_picture{
+    position: absolute;
+    margin-top: 10vh;
+    margin-left: 36vw;
+    height: 30vw;
+    width: 30vw;
+    background-image: url('../img/ppic.png');
+    background-repeat: no-repeat;
+    background-size: 29vw;
+    background-position: center;
 }

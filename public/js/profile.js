@@ -23,6 +23,7 @@ function profile(){
 function edit(){
     document.getElementById("userNeighborhood").removeAttribute("disabled");
     document.getElementById("userStratum").removeAttribute("disabled");
+    document.getElementById("editProfile").style.display = "none";
     document.getElementById("saveChanges").style.display = "block";
 }
 
@@ -43,6 +44,7 @@ function save(){
             console.log("Document successfully updated!");
             alert("Tus datos fueron actualizados");
             document.getElementById("saveChanges").style.display = "none";
+            document.getElementById("editProfile").style.display = "block";
             document.getElementById("userNeighborhood").disabled = "true";
             document.getElementById("userStratum").disabled = "true";
         })
