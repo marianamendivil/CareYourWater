@@ -95,3 +95,38 @@ section {
     width: 100vw;
     height: 50vh;
 }
+
+.profile_label{
+    font-family: 'Bree Serif', serif;
+    font-size: 20px;
+}
+
+.profile_text{
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    font-size: 18px;
+}
+
+#editProfile{
+    position: absolute;
+    margin-bottom: 10vh;
+    margin-left: 43vw;
+    height: 7vh;
+    width: 7vh;
+    background-image: url('../img/iconos/edit.png');
+    background-repeat: no-repeat;
+    background-size: 6vh;
+    background-position: center;
+}
+
+#saveChanges{
+    position: absolute;
+    margin-bottom: 10vh;
+    margin-left: 43vw;
+    height: 7vh;
+    width: 7vh;
+    background-image: url('../img/iconos/done.png');
+    background-repeat: no-repeat;
+    background-size: 6vh;
+    background-position: center;
+}
