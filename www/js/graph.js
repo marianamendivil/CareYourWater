@@ -1,6 +1,8 @@
 d3.select("#reset").select("svg").remove();
 var dataset = [];
 
+function main(){
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         async function graph(){
@@ -136,3 +138,5 @@ graph(); //this is for calling the function (itself) for the first time you ente
 
 }
 });
+}
+main();
