@@ -1,15 +1,20 @@
 d3.select("#reset").select("svg").remove();
 var dataset = [];
+var estrato1 = 22986;
+var estrato2 = 88022;
+var estrato3 = 90195;
+var estrato4 = 35872;
+var estrato5 = 28156;
+var estrato6 = 18225;
+var db = firebase.firestore();
 
 function main(){
-
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         async function graph(){
             var dataset = [120, 180, 30, 40, 120, 160];
             console.log(dataset);
 
-            var db = firebase.firestore();
             await db.collection("prueba").doc(firebase.auth().currentUser.uid).get().then(function(doc) {
                 if(doc.exists){
                     dataset = doc.data().consumoPrueba;
@@ -112,6 +117,42 @@ function addPrueba(){
                 })
                 .then(function() {
                     console.log("Dato agregado a la bd");
+                
+                    db.collection("form").doc(firebase.auth().currentUser.uid).get().then(function(stInfo) {
+                        console.log(stInfo.data().estrato);
+                        var dataStratum = stInfo.data().estrato;
+        
+                        if(dataStratum == '1'){
+                            if(consumoNuevo[consumoNuevo.length-1] >= estrato1){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                            }
+                        }
+                        if(dataStratum == '2'){
+                            if(consumoNuevo[consumoNuevo.length-1] >= estrato2){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                            }
+                        }
+                        if(dataStratum == '3'){
+                            if(consumoNuevo[consumoNuevo.length-1] >= estrato3){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                            }
+                        }
+                        if(dataStratum == '4'){
+                            if(consumoNuevo[consumoNuevo.length-1] >= estrato4){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                            }
+                        }
+                        if(dataStratum == '5'){
+                            if(consumoNuevo[consumoNuevo.length-1] >= estrato5){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                            }
+                        }
+                        if(dataStratum == '6'){
+                            if(consumoNuevo[consumoNuevo.length-1] >= estrato6){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                            }
+                        }
+                    });
                 })
                 .catch(function(error) {
                     console.error("Error writing document: ", error);
@@ -123,6 +164,45 @@ function addPrueba(){
                 })
                 .then(function() {
                     console.log("Dato agregado a la bd");
+                    db.collection("form").doc(firebase.auth().currentUser.uid).get().then(function(stInfo) {
+                        console.log(stInfo.data().estrato);
+                        var dataStratum = stInfo.data().estrato;
+        
+                        if(dataStratum == '1'){
+                            if(datoPrueba[datoPrueba.length-1] >= estrato1){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                            }
+                        }
+                        if(dataStratum == '2'){
+                            if(datoPrueba[datoPrueba.length-1] >= estrato2){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                                console.log("que sueño");
+                            }
+                            else{
+                                console.log("relax");
+                            }
+                        }
+                        if(dataStratum == '3'){
+                            if(datoPrueba[datoPrueba.length-1] >= estrato3){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                            }
+                        }
+                        if(dataStratum == '4'){
+                            if(datoPrueba[datoPrueba.length-1] >= estrato4){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                            }
+                        }
+                        if(dataStratum == '5'){
+                            if(datoPrueba[datoPrueba.length-1] >= estrato5){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                            }
+                        }
+                        if(dataStratum == '6'){
+                            if(datoPrueba[datoPrueba.length-1] >= estrato6){
+                                alert("ESTAS GASTANDO MUCHA AGUA!");
+                            }
+                        }
+                    });
                 })
                 .catch(function(error) {
                     console.error("Error writing document: ", error);
